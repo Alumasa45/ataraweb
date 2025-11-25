@@ -8,7 +8,6 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   width: 100%;
-  overflow: hidden;
 }
 
 .header-container {
@@ -94,7 +93,7 @@
   background: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease;
-  z-index: 9999;
+  z-index: 99999;
   padding: 80px 30px 30px;
   display: flex;
   flex-direction: column;
@@ -148,7 +147,7 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
+  z-index: 99998;
 }
 
 @media (max-width: 1024px) {

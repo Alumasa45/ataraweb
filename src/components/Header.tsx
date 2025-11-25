@@ -44,23 +44,22 @@ const Header: React.FC = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        
-        {/* Mobile Menu */}
-        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/classes" onClick={closeMenu}>Classes</Link>
-          <Link to="/about" onClick={closeMenu}>About</Link>
-          <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
-          <Link to="/contact" onClick={closeMenu}>Contact</Link>
-          <button 
-            className="mobile-book-btn"
-            onClick={() => { navigate('/book-now'); closeMenu(); }}
-          >
-            Book Now
-          </button>
-        </div>
-        
-        {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
+      </div>
+      
+      {/* Mobile Menu - Outside header container */}
+      {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
+      <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/classes" onClick={closeMenu}>Classes</Link>
+        <Link to="/about" onClick={closeMenu}>About</Link>
+        <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        <button 
+          className="mobile-book-btn"
+          onClick={() => { navigate('/book-now'); closeMenu(); }}
+        >
+          Book Now
+        </button>
       </div>
     </header>
   );
