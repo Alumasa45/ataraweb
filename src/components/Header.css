@@ -94,7 +94,7 @@
   background: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease;
-  z-index: 1000;
+  z-index: 9999;
   padding: 80px 30px 30px;
   display: flex;
   flex-direction: column;
@@ -148,7 +148,7 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 9998;
 }
 
 @media (max-width: 1024px) {
