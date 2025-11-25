@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="header">
@@ -21,12 +31,36 @@ const Header: React.FC = () => {
           <Link to="/pricing">Pricing</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <button 
-          className="book-btn"
-          onClick={() => navigate('/book-now')}
-        >
-          Book Now
-        </button>
+        
+        <div className="header-right">
+          <button 
+            className="book-btn"
+            onClick={() => navigate('/book-now')}
+          >
+            Book Now
+          </button>
+          
+          <button className="hamburger" onClick={toggleMenu}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/classes" onClick={closeMenu}>Classes</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
+          <button 
+            className="mobile-book-btn"
+            onClick={() => { navigate('/book-now'); closeMenu(); }}
+          >
+            Book Now
+          </button>
+        </div>
+        
+        {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
       </div>
     </header>
   );
