@@ -32,18 +32,13 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="footer-section">
-            <h4>Connect</h4>
-            <div className="social-links">
-              <a href="#instagram">📷</a>
-              <a href="#facebook">📘</a>
-              <a href="#youtube">📺</a>
-            </div>
-            <p>123 Wellness Way, Suite 456 (555) 123 Atara</p>
+            <h4>Location</h4>
+            <p>Karen, One Stop Arcade, 2nd floor</p>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>© 2024 Atara Studio. All rights reserved.</p>
+          <p>© 2025 Atara Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>
